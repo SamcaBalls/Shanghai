@@ -1,0 +1,248 @@
+.reservation-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #d4332f;
+  transition: all 0.3s ease;
+}
+
+.reservation-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Zvýraznění pro rezervace do 20 minut */
+.reservation-card.upcoming-soon {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  }
+}
+
+.reservation-card.upcoming-soon .card-header h4 {
+  color: #92400e;
+  font-weight: 600;
+}
+
+.reservation-card.upcoming-soon .time {
+  color: #92400e;
+  font-weight: 500;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.guest-count {
+  background-color: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.card-body p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card-body p:first-child {
+  margin-top: 0;
+}
+
+.time {
+  font-weight: 600;
+  color: #d4332f;
+}
+
+.phone,
+.email {
+  font-size: 0.85rem;
+}
+
+.note {
+  background-color: #fffbea;
+  padding: 8px;
+  border-radius: 4px;
+  border-left: 3px solid #ff9800;
+  font-style: italic;
+  margin-top: 10px !important;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  min-width: 70px;
+}
+
+.btn-next {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.btn-prev {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-prev:hover {
+  background-color: #0b7dda;
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+  flex: 0 1 auto;
+  padding: 8px 10px;
+  min-width: auto;
+}
+
+.btn-delete:hover {
+  background-color: #da190b;
+}
+
+@media (max-width: 768px) {
+  .reservation-card {
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+
+  .card-header {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+
+  .card-header h4 {
+    font-size: 1rem;
+  }
+
+  .guest-count {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .card-body p {
+    font-size: 0.85rem;
+    margin: 6px 0;
+  }
+
+  .note {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .card-actions {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .btn-action {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+
+  .btn-delete {
+    padding: 8px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation-card {
+    padding: 10px;
+    border-left-width: 3px;
+    margin-bottom: 8px;
+  }
+
+  .card-header {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .card-header h4 {
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+  }
+
+  .guest-count {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    flex-shrink: 0;
+  }
+
+  .card-body p {
+    font-size: 0.8rem;
+    margin: 4px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .card-actions {
+    flex-direction: row;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .btn-action {
+    flex: 1;
+    min-width: calc(50% - 3px);
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    min-width: unset;
+  }
+
+  .btn-delete {
+    flex: 0 0 auto;
+    min-width: 50px;
+    padding: 10px 12px;
+  }
+}
