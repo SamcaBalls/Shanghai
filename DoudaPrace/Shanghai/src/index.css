@@ -4,15 +4,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-main: #f4efe8;
+  --bg-surface: #fffdf8;
+  --bg-muted: #f0e8de;
+  --text-primary: #2f241d;
+  --text-secondary: #67564a;
+  --accent: #8f2c24;
+  --accent-hover: #74211a;
+  --border: #dfd1c2;
+  --shadow-soft: 0 8px 24px rgba(53, 36, 26, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  color: var(--text-primary);
+  background: radial-gradient(circle at 10% 0%, #faf6f0 0%, var(--bg-main) 40%, #efe5d8 100%);
 }
 
 .app {
@@ -34,41 +46,47 @@ main {
 button {
   cursor: pointer;
   font-family: inherit;
-  border: none;
-  background-color: #d4332f;
+  border: 1px solid transparent;
+  background-color: var(--accent);
   color: white;
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 button:hover {
-  background-color: #b82a27;
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(116, 33, 26, 0.18);
 }
 
 input, textarea, select {
   font-family: inherit;
   font-size: 1rem;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   width: 100%;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: #d4332f;
-  box-shadow: 0 0 5px rgba(212, 51, 47, 0.3);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(143, 44, 36, 0.15);
 }
 
 h1, h2, h3 {
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.02em;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.35rem;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -78,12 +96,12 @@ section {
 }
 
 section:nth-child(odd) {
-  background-color: white;
+  background-color: var(--bg-surface);
 }
 
 @media (max-width: 768px) {
   h2 {
-    font-size: 2rem;
+    font-size: 1.95rem;
     margin-bottom: 30px;
   }
   

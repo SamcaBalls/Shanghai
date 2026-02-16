@@ -1,69 +1,79 @@
 .hero {
-  background: linear-gradient(135deg, #d4332f 0%, #1a1a1a 100%);
-  color: white;
-  padding: 100px 20px;
+  background:
+    linear-gradient(120deg, rgba(47, 36, 29, 0.88), rgba(47, 36, 29, 0.72)),
+    radial-gradient(circle at top right, rgba(143, 44, 36, 0.22), transparent 46%),
+    linear-gradient(135deg, #31241d 0%, #443328 100%);
+  color: #fff8ef;
+  padding: 110px 20px;
   text-align: center;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-  color: white;
+  font-size: 3.6rem;
+  margin-bottom: 16px;
+  color: #fff8ef;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero p {
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-  line-height: 1.8;
+  font-size: 1.22rem;
+  margin: 0 auto 34px;
+  line-height: 1.75;
+  color: #f3e8d9;
+  max-width: 640px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .cta-button {
-  background-color: white;
-  color: #d4332f;
-  font-weight: bold;
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  background-color: #f7eee2;
+  color: var(--accent);
+  font-weight: 700;
+  padding: 14px 34px;
+  font-size: 1rem;
+  border: 1px solid #f7eee2;
+  transition: all 0.25s ease;
   text-decoration: none;
-  border: none;
   cursor: pointer;
   display: inline-block;
+  border-radius: 8px;
 }
 
 .order-button {
   background-color: transparent;
-  color: white;
-  font-weight: bold;
-  padding: 15px 40px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  color: #fff8ef;
+  font-weight: 700;
+  padding: 14px 34px;
+  font-size: 1rem;
+  transition: all 0.25s ease;
   text-decoration: none;
-  border: 2px solid white;
+  border: 1px solid rgba(255, 248, 239, 0.75);
   cursor: pointer;
   display: inline-block;
+  border-radius: 8px;
 }
 
 .cta-button:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.05);
+  background-color: #fff8ef;
+  transform: translateY(-1px);
 }
 
 .order-button:hover {
-  background-color: white;
-  color: #d4332f;
-  transform: scale(1.05);
+  background-color: #fff8ef;
+  color: var(--accent);
+  border-color: #fff8ef;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {

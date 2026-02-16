@@ -1,11 +1,12 @@
 .app-header {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 20px 0;
+  background-color: rgba(255, 253, 248, 0.94);
+  color: var(--text-primary);
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -19,57 +20,62 @@
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #d4332f;
+  font-weight: 700;
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease;
 }
 
 .logo:hover {
-  color: #ff6b6b;
+  color: var(--accent-hover);
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 26px;
 }
 
 nav a {
-  color: white;
+  color: var(--text-secondary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
   font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 nav a:hover {
-  color: #d4332f;
+  color: var(--accent);
 }
 
 .menu-button {
   display: none;
   background: none;
-  color: white;
+  color: var(--text-primary);
   font-size: 1.5rem;
   padding: 0;
   cursor: pointer;
 }
 
 .admin-button {
-  background-color: #d4332f;
+  background-color: var(--accent);
   color: white;
-  border: none;
+  border: 1px solid var(--accent);
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   margin-left: 15px;
 }
 
 .admin-button:hover {
-  background-color: #b82a27;
-  transform: scale(1.1);
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
@@ -80,11 +86,13 @@ nav a:hover {
   nav {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 64px;
     left: 0;
     right: 0;
-    background-color: #1a1a1a;
+    background-color: var(--bg-surface);
     padding: 20px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
   }
 
   nav.active {

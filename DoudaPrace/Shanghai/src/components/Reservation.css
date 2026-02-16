@@ -1,11 +1,17 @@
 #reservation {
-  background-color: #f9f9f9;
+  background-color: var(--bg-muted);
 }
 
 .reservation-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
 .form-group {
@@ -16,7 +22,7 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .form-row {
@@ -40,24 +46,24 @@
   width: 100%;
   padding: 15px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-top: 20px;
 }
 
 .success-message {
-  background-color: #4CAF50;
+  background-color: #2f7b4e;
   color: white;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .error-message {
-  background-color: #f44336;
+  background-color: #a12f27;
   color: white;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
   margin-bottom: 20px;
   text-align: center;
 }

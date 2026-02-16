@@ -1,0 +1,193 @@
+{
+  "title": "Taxi service website - detailed design description",
+  "language": "cs-CZ",
+  "overview": "Modernní, luxusně-minimalistický design webové stránky taxislužby s důrazem na konverzi (rezervaci). Kombinace žluté a černé s čistým bílým prostorem. Vizuálně orientováno na hero sekci s formulářem pro rezervaci, doplněné o sekce: vlastnosti, o nás, reference, často kladené dotazy a kontaktní prvky.",
+  "palette": {
+    "primary": "#f4b400",
+    "primary_dark": "#c88b00",
+    "accent": "#000000",
+    "muted": "#f7f7f7",
+    "card_bg": "#ffffff",
+    "text": "#1b1b1b",
+    "subtle_text": "#6b6b6b",
+    "success": "#28a745"
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Inter, Montserrat, 'Helvetica Neue', Arial, sans-serif",
+      "body": "Inter, Roboto, 'Helvetica Neue', Arial, sans-serif"
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "sizes_px": {
+      "h1": 36,
+      "h2": 28,
+      "h3": 22,
+      "body": 16,
+      "small": 14,
+      "xs": 12
+    },
+    "line_height": {
+      "heading": 1.1,
+      "body": 1.6
+    }
+  },
+  "layout": {
+    "grid": "responsive 12-column grid with 24px gutters on desktop, collapsing to single-column on mobile",
+    "container_max_width": 1200,
+    "sections": [
+      {
+        "name": "header",
+        "content": "Logo (left), navigation links (center / right), primary CTA 'Book A Taxi' (right). Transparent over hero background on desktop, solid white on scroll.",
+        "height": "64px",
+        "notes": "Sticky header with slight blur and shadow when scrolled"
+      },
+      {
+        "name": "hero",
+        "content": "Large background image (taxi in city) with dark gradient overlay, prominent H1 'Book Taxi For Your Ride' and short subtitle. To the right (or centered on mobile) card-like booking form with inputs for pickup/dropoff, date & time, passengers and a yellow primary CTA button.",
+        "background": "image with dark overlay (linear-gradient rgba(0,0,0,0.45) -> rgba(0,0,0,0.25))",
+        "cta": "Book Taxi Now (primary)",
+        "visual_priority": "hero and booking form are primary conversion drivers"
+      },
+      {
+        "name": "features",
+        "content": "Horizontal cards showing three to four features (Safety Guarantee, Fast Pickup, Affordable Rate, etc.) with small circular icon, short title and one-line description."
+      },
+      {
+        "name": "about",
+        "content": "Two-column layout: image on left, text block on right with 'We Provide Trusted Service...' headline, bullets and a secondary CTA 'Contact Us'.",
+        "image_style": "rounded rectangle with soft shadow and small badge '30 Years of Service' overlapping corner"
+      },
+      {
+        "name": "testimonials",
+        "content": "Carousel or grid of testimonial cards with photo, name/title, short quote and 5-star indicator. Uses white cards with subtle shadow on a dark/toned section."
+      },
+      {
+        "name": "faq",
+        "content": "Accordion style FAQ list with question toggles and short answers, placed on a pale background with supporting image on the left in desktop layout."
+      },
+      {
+        "name": "call_to_action_strip",
+        "content": "Full-width section with checkerboard or taxi-pattern accent and bold headline 'Book Your Cab It's Simple And Affordable' with CTA button."
+      },
+      {
+        "name": "footer",
+        "content": "Compact footer with contact information, quick links, small newsletter signup, social icons. Dark text on light or dark background variant."
+      }
+    ]
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "bg": "primary",
+        "text": "#ffffff",
+        "padding": "14px 22px",
+        "border_radius": 14,
+        "shadow": "0 6px 18px rgba(0,0,0,0.12)",
+        "state_hover": "darken 6%",
+        "usage": "Main actions (Book Taxi Now, About Us)"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "border": "1.5px solid rgba(0,0,0,0.08)",
+        "text": "accent",
+        "padding": "12px 18px",
+        "border_radius": 12
+      }
+    },
+    "inputs": {
+      "style": "rounded, elevated white inputs with light border and inner padding",
+      "height": "48px",
+      "field_spacing": 12,
+      "icons": "small inline icons for location, calendar, passenger"
+    },
+    "cards": {
+      "bg": "card_bg",
+      "border_radius": 16,
+      "padding": 18,
+      "shadow": "0 8px 32px rgba(11,11,11,0.08)"
+    },
+    "badges": {
+      "style": "small rounded badge with bold text, used on images like '30 Years of Quality Service'",
+      "bg": "#ffffff",
+      "text_color": "accent",
+      "padding": "6px 10px"
+    },
+    "icons": {
+      "style": "line icons with filled accent circles for emphasis",
+      "size_px": 20
+    }
+  },
+  "spacing_and_scale": {
+    "base_spacing_px": 16,
+    "scale": [
+      4,
+      8,
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "gutters": 24,
+    "border_radius_standard": 12
+  },
+  "interactions": {
+    "hover": {
+      "cards": "lift & increase shadow",
+      "links": "underline-on-hover with smooth transition 160ms"
+    },
+    "transitions": "ease-out 200ms for micro-interactions, 350ms for larger transitions",
+    "form_validation": "inline validation with green check or red error, subtle shake for invalid submit"
+  },
+  "responsive_behavior": {
+    "desktop": "two-column hero: text left, booking form right; features in a row; testimonials grid 3 columns",
+    "tablet": "stacked hero with smaller booking card, features 2 columns, testimonials 2 columns",
+    "mobile": "single column: hero text above, booking form full width below, features stacked, large tappable CTAs, sticky bottom booking CTA option"
+  },
+  "accessibility": {
+    "contrast": "ensure 4.5:1 contrast for primary text on background; yellow #f4b400 used only on white/black elements where contrast meets guidelines",
+    "focus_states": "visible focus outlines for keyboard nav, 3px ring using primary_dark",
+    "aria": "ARIA labels on form elements, accordion has roles 'button' and 'region' with aria-expanded",
+    "alt_text": "all decorative images have empty alt; content images include descriptive alt text for screen readers"
+  },
+  "assets_and_images": {
+    "hero_image": {
+      "description": "photo of taxi/city street with shallow depth of field, warm tone",
+      "suggested_format": "webp for hero, fallback jpg",
+      "size_recommendation": "1600x900 px, 70-120 KB compressed"
+    },
+    "team_and_testimonials": "small circular portrait images 64px",
+    "icons": "SVG sprite for feature icons and UI icons"
+  },
+  "css_variables": {
+    "--color-primary": "#f4b400",
+    "--color-primary-dark": "#c88b00",
+    "--color-accent": "#000000",
+    "--color-bg-muted": "#f7f7f7",
+    "--radius-lg": "14px",
+    "--radius-md": "12px",
+    "--shadow-soft": "0 8px 32px rgba(11,11,11,0.08)"
+  },
+  "measurement_estimates": {
+    "hero_padding_vertical": "64px top / 64px bottom",
+    "booking_card_width_desktop": "420px",
+    "booking_card_padding": "24px",
+    "feature_icon_diameter": "56px"
+  },
+  "developer_notes": [
+    "Prefer svg icons and system fonts to reduce load time.",
+    "Use progressive image loading (lqip) and responsive srcset for hero.",
+    "Keep booking form accessible and keyboard-navigable; prefer native <input type='datetime-local'> with fallback.",
+    "Consider A/B testing CTA text and booking card placement."
+  ],
+  "export": {
+    "file_name": "taxi_website_design.json",
+    "format": "json",
+    "encoding": "utf-8"
+  }
+}

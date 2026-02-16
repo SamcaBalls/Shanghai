@@ -1,5 +1,5 @@
 #hours {
-  background-color: white;
+  background-color: var(--bg-surface);
 }
 
 .hours-container {
@@ -12,22 +12,23 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 28px;
 }
 
 .hours-card {
-  background: white;
+  background: var(--bg-surface);
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #d4332f;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
 }
 
 .day-item {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eadfce;
 }
 
 .day-item:last-child {
@@ -35,25 +36,26 @@
 }
 
 .day-name {
-  font-weight: bold;
-  color: #1a1a1a;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .day-hours {
-  color: #d4332f;
+  color: var(--accent);
   font-weight: 600;
 }
 
 .day-item.today {
-  background-color: #fff3e0;
+  background-color: #f8eee2;
   padding: 12px;
   margin: 0 -12px;
   padding-left: 12px;
   padding-right: 12px;
+  border-radius: 8px;
 }
 
 .day-item.today .day-name {
-  color: #d4332f;
+  color: var(--accent);
 }
 
 @media (max-width: 768px) {

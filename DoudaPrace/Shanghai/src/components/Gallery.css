@@ -1,5 +1,5 @@
 #gallery {
-  background-color: white;
+  background-color: var(--bg-surface);
 }
 
 .gallery-container {
@@ -11,40 +11,42 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 22px;
+  margin-bottom: 20px;
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   height: 250px;
-  background-color: #f0f0f0;
+  background-color: var(--bg-muted);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(53, 36, 26, 0.14);
 }
 
 .gallery-item.restaurant {
-  background: linear-gradient(135deg, #d4332f, #f77a77);
+  background: linear-gradient(135deg, #8f2c24, #b24b38);
   font-size: 4rem;
 }
 
 .gallery-item.food {
-  background: linear-gradient(135deg, #ff9800, #ffb74d);
+  background: linear-gradient(135deg, #b56b27, #d29456);
   font-size: 4rem;
 }
 
 .gallery-item.ambiance {
-  background: linear-gradient(135deg, #2196F3, #64B5F6);
+  background: linear-gradient(135deg, #4f6a6f, #7b9499);
   font-size: 4rem;
 }
 
@@ -67,9 +69,10 @@
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--bg-surface);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   max-width: 90%;
   max-height: 90vh;
   text-align: center;
@@ -96,7 +99,7 @@
 }
 
 .close-modal:hover {
-  color: #d4332f;
+  color: var(--accent);
 }
 
 @keyframes fadeIn {
